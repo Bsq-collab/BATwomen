@@ -36,4 +36,42 @@ public class DQueue<T> implements Deque<T>{
     public T peekLast(){
 	return _queue.get(_queue.size() - 1);
     }
+
+    public String toString() 
+    {
+	String ret = "";
+        for (T x : _queue){
+	    ret += x + "   ";
+	}
+	return ret;
+    }
+
+    public static void main(String[] args){
+	Deque<String> test = new DQueue<String>();
+
+	System.out.println("Now enqueueing to the front thrice...");
+	test.enqueueFirst("c");
+	test.enqueueFirst("b");
+	test.enqueueFirst("a");
+	System.out.println("test:  " + test);
+
+	System.out.println("\nNow enqueueing to the back thrice...");
+	test.enqueueLast("d");
+	test.enqueueLast("e");
+	test.enqueueLast("f");
+	System.out.println("test:  " + test);
+
+	System.out.println("\nNow dequeueing from the front twice...");
+	test.dequeueFirst();
+	test.dequeueFirst();
+	System.out.println("test:  " + test);
+
+	System.out.println("\nNow dequeueing from the back twice...");
+	test.dequeueLast();
+	test.dequeueLast();
+	System.out.println("test:  " + test);
+
+	System.out.println("\npeek the first element: " + test.peekFirst());
+	System.out.println("peek the last element: " + test.peekLast());
+    }
 }
