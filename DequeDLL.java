@@ -3,13 +3,15 @@ public class DequeDLL<T> implements Deque<T>{
     private DLLNode<T> _last;
     private int _size;
 
-    //constructor
+    //constructor creates an empty deque 
     public DequeDLL(){
 	_first= new DLLNode<T>(null,null,null);
 	_last=_first;
 	_size=0;
     }
 
+    //means of adding an element to collection:
+    //Enqueue an element onto the front of this deque.
     public void addFirst( T enQVal ) {
 	DLLNode<T> adding=new DLLNode<T>(enQVal,null,null);
 	if(isEmpty()){
@@ -25,7 +27,7 @@ public class DequeDLL<T> implements Deque<T>{
     }//ending enqueueFirst()
     //O(1)
     
-    
+    //Enqueue an element onto the end of this deque.
     public void addLast( T enQVal ){
 	DLLNode<T> adding=new DLLNode<T>(enQVal,null,null);
 	if(isEmpty()){
@@ -41,6 +43,7 @@ public class DequeDLL<T> implements Deque<T>{
     }//ending enqueueLast()
     //O(1)
 
+    //Dequeues and returns the first element of the deque.
     public T removeFirst(){
 	DLLNode<T> ret=_first;
 	_first= _first.getNext();
@@ -50,6 +53,7 @@ public class DequeDLL<T> implements Deque<T>{
     }//ending removeFirst()
     //O(1)
 
+    //Dequeues and returns the last element of the deque.
     public T removeLast() {
 	DLLNode<T> ret=_last;
 	_last=_last.getPrev();
@@ -59,21 +63,26 @@ public class DequeDLL<T> implements Deque<T>{
     }//ending removeLast()
     //O(1)
 
+    //means of viewing end elements of the deque
+    //views first element
     public T peekFirst(){
 	return _first.getCargo();
     }//ending peekFirst()
     //O(1)
 
+    //views last element
     public T peekLast() {
 	return _last.getCargo();
     }//ending peekLast()
     //O(1)
 
+    //returns true if the deque is empty, false otherwise. 
     public boolean isEmpty(){
 	return _size==0;
     }//ending isEmpty()
     //O(1)
 
+    //prints each node of deque separated by spaces. 
     public String toString(){
 	String ans="";
 	DLLNode<T> p=_first;
