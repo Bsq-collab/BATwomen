@@ -5,7 +5,7 @@
 
 import java.util.ArrayList;
 
-public class DQueue<T> implements Deque<T>{
+public class DQueueAL<T> implements Deque<T>{
 
     private ArrayList<T> _queue;
     
