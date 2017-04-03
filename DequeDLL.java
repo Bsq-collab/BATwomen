@@ -23,6 +23,7 @@ public class DequeDLL<T> implements Deque<T>{
 	}
 	_size++;
     }//ending enqueueFirst()
+    //O(1)
     
     
     public void addLast( T enQVal ){
@@ -38,6 +39,7 @@ public class DequeDLL<T> implements Deque<T>{
 	}
 	_size++;
     }//ending enqueueLast()
+    //O(1)
 
     public T removeFirst(){
 	DLLNode<T> ret=_first;
@@ -45,7 +47,8 @@ public class DequeDLL<T> implements Deque<T>{
 	_first.setPrev(null);
 	_size--;
 	return ret.getCargo();
-    }//ending method
+    }//ending removeFirst()
+    //O(1)
 
     public T removeLast() {
 	DLLNode<T> ret=_last;
@@ -53,21 +56,23 @@ public class DequeDLL<T> implements Deque<T>{
 	_last.setNext(null);
 	_size--;
 	return ret.getCargo();
-    }//ending method
+    }//ending removeLast()
+    //O(1)
 
     public T peekFirst(){
 	return _first.getCargo();
-    }//ending method
-	
-	
+    }//ending peekFirst()
+    //O(1)
 
     public T peekLast() {
 	return _last.getCargo();
-    }//ending method
+    }//ending peekLast()
+    //O(1)
 
     public boolean isEmpty(){
 	return _size==0;
-    }//ending method
+    }//ending isEmpty()
+    //O(1)
 
     public String toString(){
 	String ans="";
@@ -77,7 +82,8 @@ public class DequeDLL<T> implements Deque<T>{
 	    p=p.getNext();
 	}
 	return ans;
-    }//ending method
+    }//ending toString()
+    //O(n)
 
     public static void main(String[] args){
 	DequeDLL<String> tester= new DequeDLL<String>();
@@ -88,11 +94,11 @@ public class DequeDLL<T> implements Deque<T>{
 	tester.addLast("l2");
 	tester.addLast("l3");
 
-	System.out.println("testing tostring() now");
+	System.out.println("testing toString() now");
 	System.out.println(tester);
 	System.out.println("testing removeLast() now");
 	System.out.println(tester.removeLast());
-	System.out.println("testing tostring() now");
+	System.out.println("testing toString() now");
 	System.out.println(tester);
 	System.out.println("testing removeFirst() now");
 	System.out.println(tester.removeFirst());
