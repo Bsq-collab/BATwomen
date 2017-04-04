@@ -11,6 +11,8 @@ We have the methods:
 - public T peekFirst() 
 - public T peekLast() 
 - public boolean isEmpty()
+
+Each method allows us to modify and access elements in the deque as needed. We are able to add onto the deque at the front and the back, as well as remove accordingly. This allows us to perform the actions that a deque performs. We also added methods to look at what element is at each end, which will help us in deciding what to remove or add when we check. Lastly, we have the isEmpty() method, which helps us when adding and removing to prevent errors from arising.
     
 
 ### Rationale 
