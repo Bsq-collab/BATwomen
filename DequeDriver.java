@@ -32,6 +32,7 @@ public class DequeDriver {
 	test.addLast("four");
 	test.addLast("five");
         test.addLast("six");
+	System.out.println(test + "\n");
 	
 	System.out.println("\nTesting toString()...");
 	System.out.println(test);
@@ -72,20 +73,19 @@ public class DequeDriver {
 	//removeLasting an empty Dequeue
 	//System.out.println(test.removeLast() + "-list empty");
 	
-	System.out.println("\nEnd of test 1\n");
+	//	System.out.println("\nEnd of test 1\n");
 
-	//tests addFirst() and removeLast()
-	Deque<String> test2 = new DequeDLL<String>();
+
+	//Deque<String> test2 = new DequeDLL<String>();
 	//System.out.println("Upon initialization: size = " + test2.size());
 
-	System.out.println("\nTesting addLast()...");
-	//adding elements until capacity of 5
-	test.addLast("one");
-        test.addLast("two");
-	test.addLast("three");
-	test.addLast("four");
-	test.addLast("five");
-        test.addLast("six");
+	System.out.println("\nTesting addFirst()...");
+	test.addFirst("zero");
+        test.addLast("neg 1");
+	test.addLast("neg 2");
+	test.addLast("neg 3");
+	test.addLast("neg 4");
+        test.addLast("neg 5");
 	System.out.print("After addition " + test);
 	/*
 	System.out.println("\nTesting addFirst()...");
@@ -97,8 +97,8 @@ public class DequeDriver {
 	//should not work, as the Dequeue is to capacity
 	System.out.println("six: " + test2.addFirst("six"));
 	*/
-	System.out.println("\nTesting toString()...");
-	System.out.println(test2);
+	//System.out.println("\nTesting toString()...");
+	//System.out.println(test2);
 	//elements are backwards, as they were added to the front (stacky?)
 	//	System.out.println("size = " + test2.size());
 	/*
@@ -110,12 +110,15 @@ public class DequeDriver {
 	System.out.println(test2.contains("five"));
 	System.out.println(test2.contains("six") + "-never inserted 'six'");
 	*/
-	System.out.println("\nTesting removeLast()...");
-	//"last" elements were actually the first to be inserted
-	test2.removeLast();
-	test2.removeLast();
-	test2.removeLast();
-	test2.removeLast();
+	System.out.println("\nTesting removeFirst()...");
+	test.removeFirst();
+	System.out.println(test);
+	test.removeFirst();
+	System.out.println(test);	
+	test.removeFirst();
+	System.out.println(test);	
+	test.removeFirst();
+	System.out.println(test);	
 	//System.out.println(test2.removeLast());
 	//System.out.println(test2.removeLast() + "-past capacity");
 	/*
@@ -125,18 +128,21 @@ public class DequeDriver {
 	System.out.println("value added: " + test2.addFirst( "I" ) );
 	System.out.println( test2 );
 	*/
-	System.out.println("\nTesting removeFirst()...");
-	System.out.println( test );
-	//removes elements one by one
+
 	/*
 	System.out.println(test.removeFirst() + " - " + test);
 	System.out.println(test.removeFirst() + " - " + test);
 	System.out.println(test.removeFirst() + " - " + test);
 	System.out.println(test.removeFirst() + " - " + test);
-	//System.out.println(test.removeFirst() + " - " + test);
-	//removeFirsting an empty Dequeue
-	//System.out.println(test.removeFirst() + "-list empty");
+	*/
 
+
+	//UNCOMMENT TO MAKE SURE IT THROWS PROPER ERROR
+	//removing from an empty deque
+	Deque<String> test2 = new DequeDLL<String>();
+	test2.removeFirst();
+	test.removeLast();
+	/*
 	System.out.println("value added: " + test2.addLast( "to" ) );
 	System.out.println("value added: " + test2.addFirst( "like" ) );
 	System.out.println("value added: " + test2.addLast( "sleep" ) );
