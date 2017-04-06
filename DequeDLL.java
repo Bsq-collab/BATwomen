@@ -68,12 +68,18 @@ public class DequeDLL<T> implements Deque<T>{
     //means of viewing end elements of the deque
     //views first element
     public T peekFirst(){
+	if( isEmpty()) {
+		return null ;
+	}
 	return _first.getCargo();
     }//ending peekFirst()
     //O(1)
 
     //views last element
     public T peekLast() {
+	if( isEmpty()) {
+		return null ;
+	}
 	return _last.getCargo();
     }//ending peekLast()
     //O(1)
