@@ -24,7 +24,7 @@ public class DequeDLL<T> implements Deque<T>{
 	    _first=adding;
 	}
 	_size++;
-    }//ending enqueueFirst()
+    }//ending addFirst()
     //O(1)
     
     //Enqueue an element onto the end of this deque.
@@ -40,11 +40,12 @@ public class DequeDLL<T> implements Deque<T>{
 	    _last=_last.getNext();
 	}
 	_size++;
-    }//ending enqueueLast()
+    }//ending addLast()
     //O(1)
 
     //Dequeues and returns the first element of the deque.
     public T removeFirst(){
+	if (isEmpty()) { return null; } 
 	DLLNode<T> ret=_first;
 	_first= _first.getNext();
 	_first.setPrev(null);
@@ -55,6 +56,7 @@ public class DequeDLL<T> implements Deque<T>{
 
     //Dequeues and returns the last element of the deque.
     public T removeLast() {
+	if (isEmpty()) { return null; }
 	DLLNode<T> ret=_last;
 	_last=_last.getPrev();
 	_last.setNext(null);
