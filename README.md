@@ -36,5 +36,5 @@ Furthermore, using ArrayLists will consume more memory. When dequeueing, the _fr
 
 
 ### EDITS:
-- Accounted for empty deques in remove and peekFirst
+- Accounted for empty deques in remove and peek
 - Added descriptions (from the API) for each method in README
