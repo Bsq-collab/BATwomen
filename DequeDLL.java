@@ -8,7 +8,7 @@ public class DequeDLL<T> implements Deque<T>{
     public DequeDLL(){
 	
 	_first = new DLLNode<T>(null,null,null);
-	_last =_ first;
+	_last = _first;
 	_size = 0;
 	
     }
@@ -120,7 +120,7 @@ public class DequeDLL<T> implements Deque<T>{
 	
 	DLLNode<T> p = _first;
 	
-	while(p! = null){
+	while(p != null){
 	    ans += p.getCargo()+" ";
 	    p = p.getNext();
 	}
